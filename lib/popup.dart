@@ -54,7 +54,7 @@ class _PopUPState extends State<PopUP> {
                   if (_validateTodoName == false) {
                     var _todo = Todo();
                     _todo.name = _todoName.text;
-                    _todo.status="notcompleted";
+                    // _todo.status="notcompleted";
 
                     var result = await _todoservice.saveTodo(_todo);
                     widget.setStateFuncV!(() {
