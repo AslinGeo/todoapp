@@ -31,9 +31,15 @@ readData(table) async{
   var connection= await database;
   return await connection?.query(table);
 }
-deleteData(table,todoId) async{
+// deleteData(table,todoId) async{
+//   var connection=await database;
+//   return await connection?.rawDelete("delete from $table where id=$todoId");
+
+// }
+updateData(table,data) async{
   var connection=await database;
-  return await connection?.rawDelete("delete from $table where id=$todoId");
+  return await connection?.rawUpdate('UPDATE ${table} SET status=? WHERE id = ?',
+    [data['status'],data['id']]);
 
 }
 }
