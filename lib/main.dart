@@ -94,7 +94,10 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const Text(
                     'Active Todo',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.black),
+                    style: TextStyle(
+                        fontSize: 20,
+                         fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
                 ],
               ),
@@ -113,7 +116,6 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: ListTile(
                       title: Text(_todoList[index].name ?? ''),
                       leading: Radio(
-                        
                         value: index,
                         groupValue: val,
                         onChanged: (value) async {
@@ -148,9 +150,11 @@ class _MyHomePageState extends State<MyHomePage> {
                 children: [
                   const Text(
                     'Completed Todo',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold,color: Colors.black),
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black),
                   ),
-                  
                 ],
               ),
             ),
@@ -167,11 +171,17 @@ class _MyHomePageState extends State<MyHomePage> {
                     color: Colors.grey.shade400,
                     child: ListTile(
                       title: Text(_completetodo[index].name ?? ''),
-                      leading: Icon(Icons.check,color: Colors.white,),
+                      leading: Icon(
+                        Icons.check,
+                        color: Colors.white,
+                      ),
                       trailing: IconButton(
-                        icon: Icon(Icons.delete,color: Colors.red.shade800,),
-                        onPressed: (){
-                           var _todo = Todo();
+                        icon: Icon(
+                          Icons.delete,
+                          color: Colors.red.shade800,
+                        ),
+                        onPressed: () {
+                          var _todo = Todo();
                           _todo.id = _completetodo[index].id;
                           //  _todo.name=_todoList[index].name;
                           _todo.status = 'notcompleted';
@@ -180,7 +190,6 @@ class _MyHomePageState extends State<MyHomePage> {
                           getAllTodo();
                         },
                       ),
-                      
                     ),
                     elevation: 8,
 
